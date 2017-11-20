@@ -1,3 +1,5 @@
+
+
 <?php
 require_once('./vendor/autoload.php');
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
@@ -16,12 +18,14 @@ if ($event['type'] == 'message') {
 // Get replyToken
 $replyToken = $event['replyToken'];
 switch($event['message']['type']) {
-case 'image':
-$messageID = $event['message']['id'];
-$respMessage = 'Hello, your image ID is '. $messageID;
+case 'sticker':
+$messageID = $event['message']['packageId'];
+// Reply message
+$respMessage = 'Hello, your Sticker Package ID is '. $messageID;
 break;
 default:
-$respMessage = 'Please send image only';
+// Reply message
+$respMessage = 'Please send Sticker only';
 break;
 }
 $httpClient = new CurlHTTPClient($channel_token);
