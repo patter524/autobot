@@ -23,7 +23,7 @@ case 'f':
 $respMessage = 'Love you lady.';
 break;
 default:
-$respMessage = 'What is your sex? M1 or F1';
+$respMessage = 'What is your sex? M1 or F1aa';
 break;
 }
 $httpClient = new CurlHTTPClient($channel_token);
